@@ -1,0 +1,22 @@
+.nav-link.active {
+    background-color: #3177a2 !important;
+    color: white !important;
+}
+
+.header-card {
+    background-color: rgb(100, 165, 193) !important;
+    color: white !important;
+}
+
+.category-link.active {
+    background-color: #ccc;
+}
+
+.main-content {
+    min-height: 100vh;
+    max-height: max-content;
+}
+
+.card-package:hover p.card-text {
+    color: rgb(100, 165, 193);
+}
