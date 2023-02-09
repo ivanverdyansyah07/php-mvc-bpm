@@ -19,14 +19,21 @@ class Complaint_model extends Database
 
     public function getComplaintsByID($id)
     {
-        $query = "SELECT * FROM $this->table WHERE id=$id";
+        $query = "SELECT * FROM complaint WHERE complaint.user_id=$id";
         $this->db->query($query);
-        return $this->db->single();
+        return $this->db->resultAll();
     }
 
     public function getComplaint($id)
     {
         $query = "SELECT * FROM $this->table WHERE id=$id";
+        $this->db->query($query);
+        return $this->db->resultAll();
+    }
+
+    public function getTotalComplaint($id)
+    {
+        $query = "SELECT COUNT(*) as total_complaint FROM complaint WHERE complaint.user_id=$id";
         $this->db->query($query);
         return $this->db->resultAll();
     }
@@ -47,8 +54,7 @@ class Complaint_model extends Database
 
     public function editComplaint($data)
     {
-        $query = "UPDATE $this->table SET `id`=:id,`name`=:name,`email`=:email,`phone`=:phone,`area`=:area,`complaint`=:complaint,`solution`=:solution WHERE id=:id";
-
+        $query = "UPDATE $this->table SET `id`=:id,`name`=:name,`email`=:email,`phone`=:phone,`area`=:area,`complaint`=:complaint WHERE id=:id";
         $this->db->query($query);
         $this->db->bind('id', $data['id']);
         $this->db->bind('name', $data['name']);
@@ -56,22 +62,16 @@ class Complaint_model extends Database
         $this->db->bind('phone', $data['phone']);
         $this->db->bind('area', $data['area']);
         $this->db->bind('complaint', $data['complaint']);
-        $this->db->bind('solution', $data['solution']);
-
         $this->db->execute();
-
         return $this->db->rowCount();
     }
 
     public function deleteComplaint($id)
     {
         $query = "DELETE FROM $this->table WHERE id=:id";
-
         $this->db->query($query);
         $this->db->bind('id', $id);
-
         $this->db->execute();
-
         return $this->db->rowCount();
     }
 }

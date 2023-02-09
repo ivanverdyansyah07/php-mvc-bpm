@@ -6,9 +6,9 @@ class History extends Controller
     {
         $data['page'] = 'History';
         $data['complaints'] = $this->model('Complaint_model')->getComplaintsByID($id);
+        $data['amount'] = $this->model('Complaint_model')->getTotalComplaint($id);
         $this->view('templates/header', $data);
         $this->view('history/index', $data);
-        var_dump($data['complaints']);
         $this->view('templates/footer');
     }
 
@@ -34,14 +34,18 @@ class History extends Controller
     public function complaintEdit()
     {
         if ($this->model('Complaint_model')->editComplaint($_POST) > 0) {
-            header('Location: ' . BASEURL . '/history');
+            header('Location: ' . BASEURL);
+        } else {
+            header('Location: ' . BASEURL);
         }
     }
 
     public function complaintDelete($id)
     {
         if ($this->model('Complaint_model')->deleteComplaint($id) > 0) {
-            header('Location: ' . BASEURL . '/history');
+            header('Location: ' . BASEURL);
+        } else {
+            header('Location: ' . BASEURL);
         }
     }
 }

@@ -1,11 +1,11 @@
 <section style="margin-top: 72px;">
     <div class="section">
         <div class="section-header mb-4">
-            <h2>Edit Report Complaint</h2>
+            <h2>Edit Data Complaint</h2>
         </div>
 
         <?php foreach ($data['complaint'] as $complaint) : ?>
-            <form action="<?= BASEURL; ?>/report/complaintEdit" method="post">
+            <form action="<?= BASEURL; ?>/history/complaintEdit" method="post">
                 <div class="row">
                     <div class="col-7">
                         <div class="row">
@@ -34,21 +34,15 @@
                                     <input type="text" class="form-control" id="area" name="area" value="<?= $complaint['area']; ?>">
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="mb-3">
                                     <label for="complaint" class="form-label">Complaint</label>
                                     <textarea class="form-control" id="complaint" name="complaint" rows="4"><?= $complaint['complaint']; ?></textarea>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="mb-3">
-                                    <label for="solution" class="form-label">Solution</label>
-                                    <textarea class="form-control" id="solution" name="solution" rows="4"><?= $complaint['solution']; ?></textarea>
-                                </div>
-                            </div>
                         </div>
                         <div class="button-group">
-                            <a href="<?= BASEURL; ?>/report" class="btn btn-light">Back to Page</a>
+                            <a href="<?= BASEURL; ?>/history/<?= $_SESSION['userLogin']['id']; ?>" class="btn btn-light">Back to Page</a>
                             <button type="submit" class="btn btn-dark">Save Changes</button>
                         </div>
                     </div>

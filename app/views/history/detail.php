@@ -1,7 +1,7 @@
 <section style="margin-top: 72px;">
     <div class="section">
         <div class="section-header mb-4">
-            <h2>Detail Data Report Complaint</h2>
+            <h2>Detail Data Complaint</h2>
         </div>
 
         <?php foreach ($data['complaint'] as $complaint) : ?>
@@ -41,12 +41,12 @@
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="solution" class="form-label">Solution</label>
-                                <textarea class="form-control" id="solution" name="solution" rows="4"><?= $complaint['solution']; ?></textarea>
+                                <textarea class="form-control" id="solution" name="solution" rows="4"><?= $complaint['reply'] == NULL ? '' : $complaint['reply']; ?></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="button-group">
-                        <a href="<?= BASEURL; ?>/report" class="btn btn-light">Back to Page</a>
+                        <a href="<?= BASEURL; ?>/history/<?= $_SESSION['userLogin']['id']; ?>" class="btn btn-light">Back to Page</a>
                     </div>
                 </div>
             </div>
