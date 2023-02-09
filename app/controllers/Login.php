@@ -9,26 +9,26 @@ class Login extends Controller
 
     public function loginAction()
     {
+        session_start();
+
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $data['user'] = $this->model('Login_model')->getUserLogin($username, $password);
+        $data['user'] = $this->model('Login_model')->getAdminLogin($username, $password);
 
-        session_start();
+        if ($data['user'] == NULL) {
+            $data['user'] = $this->model('Login_model')->getUserLogin($username, $password);
+        }
+
+        $id_level = $data['user']['id_level'];
+        $data['role'] = $this->model('Login_model')->getRole($id_level);
+
         if ($data['user'] == NULL) {
             header("Location:" . BASEURL . "/login");
         } else {
-            $_SESSION['login'] = $data['user']['role'];
+            $_SESSION['userLogin'] = $data['user'];
+            $_SESSION['login'] = $data['role']['role'];
             header("Location:" . BASEURL . "/home");
         }
-
-
-        // if ($this->model('Login_model')->getLogin($_POST) > 0) {
-        //     $data['user'] = $this->model('Login_model')->getLogin($_POST);
-        //     // $_SESSION['login'] = $data['user'];
-        //     header('Location: ' . BASEURL . '/home');
-        // } else {
-        //     header('Location: ' . BASEURL . '/login');
-        // };
     }
 }

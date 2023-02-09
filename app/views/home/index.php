@@ -1,11 +1,11 @@
 <section class="d-flex align-items-center" style="width: 100%; height: 100vh;">
     <div class="section-group">
         <h1 class="display-4 fw-bold mb-3">Hello, Welcome Back
-            <?php if ($_SESSION['login'] == 'admin') : ?>
+            <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'admin') : ?>
                 <?= "Admin"; ?>
-            <?php elseif ($_SESSION['login'] == 'user') : ?>
-                <?= "User"; ?>
-            <?php else : ?>
+            <?php elseif (isset($_SESSION['login']) && $_SESSION['login'] == 'user') : ?>
+                <?= $_SESSION['userLogin']['fullname']; ?>
+            <?php elseif (!isset($_SESSION['login'])) : ?>
                 <?= "to BPM"; ?>
             <?php endif; ?>
             !</h1>

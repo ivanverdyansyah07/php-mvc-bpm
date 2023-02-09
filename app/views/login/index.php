@@ -14,7 +14,7 @@
     <section class="d-flex align-items-start bg-dark d-flex justify-content-center" style="width: 100%; height: 100vh;">
         <div class="section-login bg-white mt-5 p-5 rounded-4" style="width: 500px;">
             <h1 class="display-4 fw-bold mb-3 text-center">Login!</h1>
-            <form class="login-form" action="<?= BASEURL; ?>/Login/loginAction" method="post">
+            <form class="login-form" action="<?= BASEURL; ?>/login/loginAction" method="post">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username">

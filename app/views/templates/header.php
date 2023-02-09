@@ -26,7 +26,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link" href="<?= BASEURL; ?>/login">Login</a>
                     <a class="nav-link" href="<?= BASEURL; ?>/register">Register</a>
-                    <a class="nav-link" href="<?= BASEURL; ?>/login">Logout</a>
+                    <a class="nav-link" href="<?= BASEURL; ?>/logout">Logout</a>
                 </div>
             </div>
         </div>
