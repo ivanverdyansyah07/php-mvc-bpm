@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-7">
                     <div class="row">
-                        <input type="hidden" class="form-control" name="id_level" value="<?= isset($_SESSION['login']) ? $_SESSION['userLogin']['id_level'] : '0'; ?>">
+                        <input type="hidden" class="form-control" name="user_id" value="<?= isset($_SESSION['login']) ? $_SESSION['userLogin']['id'] : '0'; ?>">
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>

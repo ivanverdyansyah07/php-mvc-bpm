@@ -1,7 +1,7 @@
 <section style="margin-top: 72px;">
     <div class="section">
         <div class="section-header mb-4">
-            <h2>Report Complaint</h2>
+            <h2>History Complaint</h2>
         </div>
 
         <table class="table">
@@ -9,8 +9,6 @@
                 <tr>
                     <th scope="col">No.</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Number Phone</th>
                     <th scope="col">Area</th>
                     <th scope="col">Complaint</th>
                     <th scope="col">Solution</th>
@@ -19,7 +17,7 @@
             </thead>
             <tbody>
                 <?php $i = 1; ?>
-                <?php foreach ($data['complaints'] as $complaint) : ?>
+                <!-- <?php foreach ($data['complaints'] as $complaint) : ?>
                     <tr>
                         <td scope="col"><?= $i; ?></td>
                         <td scope="col"><?= $complaint['name']; ?></td>
@@ -35,7 +33,7 @@
                         </td>
                     </tr>
                     <?php $i++; ?>
-                <?php endforeach; ?>
+                <?php endforeach; ?> -->
             </tbody>
         </table>
     </div>

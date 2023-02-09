@@ -8,6 +8,7 @@ class History extends Controller
         $data['complaints'] = $this->model('Complaint_model')->getComplaintsByID($id);
         $this->view('templates/header', $data);
         $this->view('history/index', $data);
+        var_dump($data['complaints']);
         $this->view('templates/footer');
     }
 

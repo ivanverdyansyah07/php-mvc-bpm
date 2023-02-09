@@ -24,7 +24,7 @@
                         <a class="nav-link <?= $data['page'] == "Report" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/report">Report</a>
                     <?php elseif (isset($_SESSION['login']) && $_SESSION['login'] == 'user') : ?>
                         <a class="nav-link <?= $data['page'] == "Complaint" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/complaint">Complaint</a>
-                        <a class="nav-link <?= $data['page'] == "History" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/history">History</a>
+                        <a class="nav-link <?= $data['page'] == "History" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/history/<?= $_SESSION['userLogin']['id']; ?>">History</a>
                     <?php elseif (!isset($_SESSION['login'])) : ?>
                         <a class="nav-link <?= $data['page'] == "Complaint" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/complaint">Complaint</a>
                     <?php endif; ?>
