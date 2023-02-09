@@ -25,6 +25,9 @@
                 </div>
                 <button type="submit" class="btn btn-dark py-2" style="width: 100%;">Login</button>
             </form>
+            <div class="link-redirect text-center mt-4">
+                <a href="<?= BASEURL; ?>/home" class="text-secondary d-d-inline-block">Back to Home</a>
+            </div>
         </div>
     </section>
 

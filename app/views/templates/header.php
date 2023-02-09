@@ -21,12 +21,19 @@
                 <div class="navbar-nav">
                     <a class="nav-link <?= $data['page'] == "Home" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/home">Home</a>
                     <a class="nav-link <?= $data['page'] == "Complaint" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/complaint">Complaint</a>
-                    <a class="nav-link <?= $data['page'] == "Report" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/report">Report</a>
+                    <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'admin') : ?>
+                        <a class="nav-link <?= $data['page'] == "Report" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/report">Report</a>
+                    <?php elseif (isset($_SESSION['login']) && $_SESSION['login'] == 'user') : ?>
+                        <a class="nav-link <?= $data['page'] == "History" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/history">History</a>
+                    <?php endif; ?>
                 </div>
                 <div class="navbar-nav">
-                    <a class="nav-link" href="<?= BASEURL; ?>/login">Login</a>
-                    <a class="nav-link" href="<?= BASEURL; ?>/register">Register</a>
-                    <a class="nav-link" href="<?= BASEURL; ?>/logout">Logout</a>
+                    <?php if (isset($_SESSION['login'])) : ?>
+                        <a class="nav-link" href="<?= BASEURL; ?>/logout">Logout</a>
+                    <?php elseif (!isset($_SESSION['login'])) : ?>
+                        <a class="nav-link" href="<?= BASEURL; ?>/login">Login</a>
+                        <a class="nav-link" href="<?= BASEURL; ?>/register">Register</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
