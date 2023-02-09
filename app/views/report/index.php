@@ -1,4 +1,4 @@
-<section style="margin-top: 100px;">
+<section style="margin-top: 72px;">
     <div class="section">
         <div class="section-header mb-4">
             <h2>Report Complaint</h2>
@@ -11,7 +11,6 @@
                     <th scope="col">Name</th>
                     <th scope="col">Area</th>
                     <th scope="col">Complaint</th>
-                    <th scope="col">Solution</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -23,7 +22,6 @@
                         <td scope="col"><?= $complaint['name']; ?></td>
                         <td scope="col"><?= $complaint['area']; ?></td>
                         <td scope="col"><?= $complaint['complaint']; ?></td>
-                        <td scope="col"><?= $complaint['solution']; ?></td>
                         <td scope="col">
                             <a href="<?= BASEURL; ?>/report/detail/<?= $complaint['id']; ?>" class="btn btn-primary btn-sm">Detail</a>
                             <a href="<?= BASEURL; ?>/report/edit/<?= $complaint['id']; ?>" class="btn btn-warning btn-sm">Edit</a>

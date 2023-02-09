@@ -1,4 +1,4 @@
-<section style="margin-top: 100px;">
+<section style="margin-top: 72px;">
     <div class="section">
         <div class="section-header mb-4">
             <h2>Enter Your Complaint</h2>
@@ -8,10 +8,11 @@
             <div class="row">
                 <div class="col-7">
                     <div class="row">
+                        <input type="hidden" class="form-control" name="id_level" value="<?= isset($_SESSION['login']) ? $_SESSION['userLogin']['id_level'] : '0'; ?>">
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name">
+                                <input type="text" class="form-control" id="name" name="name" value="<?= isset($_SESSION['login']) ? $_SESSION['userLogin']['fullname'] : ''; ?>">
                             </div>
                         </div>
                         <div class="col-6">
@@ -32,16 +33,10 @@
                                 <input type="text" class="form-control" id="area" name="area">
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="mb-3">
                                 <label for="complaint" class="form-label">Complaint</label>
                                 <textarea class="form-control" id="complaint" name="complaint" rows="4"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label for="solution" class="form-label">Solution</label>
-                                <textarea class="form-control" id="solution" name="solution" rows="4"></textarea>
                             </div>
                         </div>
                     </div>

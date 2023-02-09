@@ -1,4 +1,4 @@
-<section style="margin-top: 100px;">
+<section style="margin-top: 72px;">
     <div class="section">
         <div class="section-header mb-4">
             <h2>Detail Data Report Complaint</h2>

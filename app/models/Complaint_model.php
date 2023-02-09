@@ -10,14 +10,6 @@ class Complaint_model extends Database
         $this->db = new Database;
     }
 
-    // public function getUser()
-    // {
-    //     $query = "SELECT * FROM user WHERE id=" . $_SESSION['login']['id'];
-    //     $this->db->query($query);
-    //     $this->db->execute();
-    //     return $this->db->resultAll();
-    // }
-
     public function getAllComplaints()
     {
         $query = "SELECT * FROM $this->table ORDER BY id DESC";
@@ -41,19 +33,15 @@ class Complaint_model extends Database
 
     public function createComplaint($data)
     {
-        $query = "INSERT INTO $this->table(name,email,phone,area,complaint,solution) VALUES(:name,:email,:phone,:area,:complaint,:solution)";
-
+        $query = "INSERT INTO $this->table(id_level,name,email,phone,area,complaint) VALUES(:id_level,:name,:email,:phone,:area,:complaint)";
         $this->db->query($query);
-        // $this->db->bind('user_id', $data['user_id']);
+        $this->db->bind('id_level', $data['id_level']);
         $this->db->bind('name', $data['name']);
         $this->db->bind('email', $data['email']);
         $this->db->bind('phone', $data['phone']);
         $this->db->bind('area', $data['area']);
         $this->db->bind('complaint', $data['complaint']);
-        $this->db->bind('solution', $data['solution']);
-
         $this->db->execute();
-
         return $this->db->rowCount();
     }
 

@@ -5,7 +5,6 @@ class Complaint extends Controller
     public function index()
     {
         $data['page'] = 'Complaint';
-        // $data['user'] = $this->model('Complaint_model')->getUser();
         $this->view('templates/header', $data);
         $this->view('complaint/index');
         $this->view('templates/footer');
