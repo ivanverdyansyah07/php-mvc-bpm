@@ -74,4 +74,19 @@ class Complaint_model extends Database
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function approvedComplaint($data)
+    {
+        $query = "UPDATE $this->table SET `id`=:id,`name`=:name,`email`=:email,`phone`=:phone,`area`=:area,`complaint`=:complaint,`reply`=:reply WHERE id=:id";
+        $this->db->query($query);
+        $this->db->bind('id', $data['id']);
+        $this->db->bind('name', $data['name']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('phone', $data['phone']);
+        $this->db->bind('area', $data['area']);
+        $this->db->bind('complaint', $data['complaint']);
+        $this->db->bind('reply', $data['reply']);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }

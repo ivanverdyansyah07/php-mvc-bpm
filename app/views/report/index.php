@@ -11,6 +11,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Area</th>
                     <th scope="col">Complaint</th>
+                    <th scope="col">Solution</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -22,9 +23,10 @@
                         <td scope="col"><?= $complaint['name']; ?></td>
                         <td scope="col"><?= $complaint['area']; ?></td>
                         <td scope="col"><?= $complaint['complaint']; ?></td>
+                        <td scope="col"><?= $complaint['reply'] == NULL ? '' : $complaint['reply']; ?></td>
                         <td scope="col">
                             <a href="<?= BASEURL; ?>/report/detail/<?= $complaint['id']; ?>" class="btn btn-primary btn-sm">Detail</a>
-                            <a href="<?= BASEURL; ?>/report/edit/<?= $complaint['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="<?= BASEURL; ?>/report/approved/<?= $complaint['id']; ?>" class="btn btn-warning btn-sm">Approved</a>
                             <a href="<?= BASEURL; ?>/report/complaintDelete/<?= $complaint['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>

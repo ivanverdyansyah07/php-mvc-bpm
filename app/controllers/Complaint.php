@@ -15,7 +15,7 @@ class Complaint extends Controller
         if ($this->model('Complaint_model')->createComplaint($_POST) > 0) {
             header('Location: ' . BASEURL);
         } else {
-            header('Location: ' . BASEURL . '/complaint');
+            header('Location: ' . BASEURL);
         }
     }
 }

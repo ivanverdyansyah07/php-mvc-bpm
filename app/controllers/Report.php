@@ -21,27 +21,31 @@ class Report extends Controller
         $this->view('templates/footer');
     }
 
-    public function edit($id)
+    public function approved($id)
     {
         $data['page'] = 'Report';
         $data['complaints'] = $this->model('Complaint_model')->getAllComplaints();
         $data['complaint'] = $this->model('Complaint_model')->getComplaint($id);
         $this->view('templates/header', $data);
-        $this->view('report/edit', $data);
+        $this->view('report/approved', $data);
         $this->view('templates/footer');
     }
 
-    public function complaintEdit()
+    public function complaintApproved()
     {
-        if ($this->model('Complaint_model')->editComplaint($_POST) > 0) {
-            header('Location: ' . BASEURL . '/report');
+        if ($this->model('Complaint_model')->approvedComplaint($_POST) > 0) {
+            header("Location:" . BASEURL . "/report");
+        } else {
+            header("Location:" . BASEURL . "/report");
         }
     }
 
     public function complaintDelete($id)
     {
         if ($this->model('Complaint_model')->deleteComplaint($id) > 0) {
-            header('Location: ' . BASEURL . '/report');
+            header('Location: ' . BASEURL);
+        } else {
+            header('Location: ' . BASEURL);
         }
     }
 }
