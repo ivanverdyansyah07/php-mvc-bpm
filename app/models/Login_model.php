@@ -10,12 +10,12 @@ class Login_model extends Database
         $this->db = new Database;
     }
 
-    public function getLogin($data)
+    public function getUserLogin($username, $password)
     {
-        $query = "SELECT * FROM $this->table WHERE username=:username";
+        $query = "SELECT * FROM $this->table WHERE username=:username && password=:password";
         $this->db->query($query);
-        $this->db->bind('username', $data['username']);
-
+        $this->db->bind('username', $username);
+        $this->db->bind('password', $password);
         return $this->db->single();
     }
 }

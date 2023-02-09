@@ -7,7 +7,7 @@ class Complaint extends Controller
         $data['page'] = 'Complaint';
         // $data['user'] = $this->model('Complaint_model')->getUser();
         $this->view('templates/header', $data);
-        $this->view('complaint/index', $data);
+        $this->view('complaint/index');
         $this->view('templates/footer');
     }
 

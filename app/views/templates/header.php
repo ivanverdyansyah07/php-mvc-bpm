@@ -22,10 +22,10 @@
                     <a class="nav-link <?= $data['page'] == "Home" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/home">Home</a>
                     <a class="nav-link <?= $data['page'] == "Complaint" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/complaint">Complaint</a>
                     <a class="nav-link <?= $data['page'] == "Report" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/report">Report</a>
-                    <!-- <a class="nav-link <?= $data['page'] == "History" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/history/<?= $_SESSION['login']['id']; ?>">History</a> -->
                 </div>
                 <div class="navbar-nav">
-                    <a class="nav-link <?= $data['page'] == "Login" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/login">Login</a>
+                    <a class="nav-link" href="<?= BASEURL; ?>/login">Login</a>
+                    <a class="nav-link" href="<?= BASEURL; ?>/register">Register</a>
                     <a class="nav-link" href="<?= BASEURL; ?>/login">Logout</a>
                 </div>
             </div>

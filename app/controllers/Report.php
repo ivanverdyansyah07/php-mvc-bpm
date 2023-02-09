@@ -6,9 +6,10 @@ class Report extends Controller
     {
         $data['page'] = 'Report';
         $data['complaints'] = $this->model('Complaint_model')->getAllComplaints();
+
         $this->view('templates/header', $data);
         $this->view('report/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/footer', $data);
     }
 
     public function detail($id)

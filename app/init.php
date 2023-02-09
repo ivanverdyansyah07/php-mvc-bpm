@@ -1,8 +1,6 @@
 <?php
 
-if (!session_id()) {
-    session_start();
-}
+$_SESSION['login'] = 'guest';
 
 require_once "core/App.php";
 require_once "core/Controller.php";
