@@ -39,13 +39,13 @@ class App
 
     public function parseUrl()
     {
-        if ($_GET['url']) {
+        if (isset($_GET['url'])) {
             $url = rtrim($_GET['url'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
             return $url;
         } else {
-            return [$this->controller];
+            return [$this->controller, $this->method];
         }
     }
 }

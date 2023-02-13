@@ -5,7 +5,7 @@
                 <?= "Admin"; ?>
             <?php elseif (isset($_SESSION['login']) && $_SESSION['login'] == 'user') : ?>
                 <?= $_SESSION['userLogin']['fullname']; ?>
-            <?php elseif (!isset($_SESSION['login'])) : ?>
+            <?php elseif ($_SESSION['login'] == 'guest') : ?>
                 <?= "to BPM"; ?>
             <?php endif; ?>
             !</h1>

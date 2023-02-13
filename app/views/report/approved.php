@@ -1,4 +1,4 @@
-<section style="margin-top: 72px;">
+<section style="margin-top: 100px;">
     <div class="section">
         <div class="section-header mb-4">
             <h2>Approved Complaint</h2>

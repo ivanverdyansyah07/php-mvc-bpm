@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $_SESSION['login'] = 'guest';
 
 require_once "core/App.php";
