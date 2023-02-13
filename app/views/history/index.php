@@ -33,7 +33,7 @@
                                 <td scope="col">
                                     <a href="<?= BASEURL; ?>/history/detail/<?= $complaint['id']; ?>" class="btn btn-primary btn-sm">Detail</a>
                                     <a href="<?= BASEURL; ?>/history/edit/<?= $complaint['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="<?= BASEURL; ?>/history/complaintDelete/<?= $complaint['id']; ?>" class="btn btn-danger btn-sm">Danger</a>
+                                    <a href="<?= BASEURL; ?>/history/complaintDelete/<?= $complaint['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                             <?php $i++; ?>

@@ -34,8 +34,10 @@ class Report extends Controller
     public function complaintApproved()
     {
         if ($this->model('Complaint_model')->approvedComplaint($_POST) > 0) {
+            Flasher::setFlash('success', 'Report Data', 'Successfully Approved!');
             header("Location:" . BASEURL . "/report");
         } else {
+            Flasher::setFlash('danger', 'Report Data', 'Failed to Approve!');
             header("Location:" . BASEURL . "/report");
         }
     }
@@ -43,9 +45,11 @@ class Report extends Controller
     public function complaintDelete($id)
     {
         if ($this->model('Complaint_model')->deleteComplaint($id) > 0) {
-            header('Location: ' . BASEURL);
+            Flasher::setFlash('success', 'Report Data', 'Successfully Deleted!');
+            header('Location: ' . BASEURL . '/report');
         } else {
-            header('Location: ' . BASEURL);
+            Flasher::setFlash('danger', 'Report Data', 'Failed to Delete!');
+            header('Location: ' . BASEURL . '/report');
         }
     }
 }

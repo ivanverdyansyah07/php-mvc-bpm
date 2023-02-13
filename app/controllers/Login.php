@@ -24,8 +24,10 @@ class Login extends Controller
         $data['role'] = $this->model('Login_model')->getRole($id_level);
 
         if ($data['user'] == NULL) {
+            // Flasher::setflash('danger', 'Login', 'Gagal!');
             header("Location:" . BASEURL . "/login");
         } else {
+            // Flasher::setflash('success', 'Login', 'Berhasil!');
             $_SESSION['userLogin'] = $data['user'];
             $_SESSION['login'] = $data['role']['role'];
             header("Location:" . BASEURL . "/home");

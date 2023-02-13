@@ -25,16 +25,16 @@
                     <?php elseif (isset($_SESSION['login']) && $_SESSION['login'] == 'user') : ?>
                         <a class="nav-link <?= $data['page'] == "Complaint" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/complaint">Complaint</a>
                         <a class="nav-link <?= $data['page'] == "History" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/history/<?= $_SESSION['userLogin']['id']; ?>">History</a>
-                    <?php elseif ($_SESSION['login'] == 'guest') : ?>
+                    <?php elseif (!isset($_SESSION['login'])) : ?>
                         <a class="nav-link <?= $data['page'] == "Complaint" ? 'active' : ''; ?>" href="<?= BASEURL; ?>/complaint">Complaint</a>
                     <?php endif; ?>
                 </div>
                 <div class="navbar-nav">
-                    <?php if ($_SESSION['login'] == 'admin' || $_SESSION['login'] == 'user') : ?>
-                        <a class="nav-link" href="<?= BASEURL; ?>/logout">Logout</a>
-                    <?php elseif ($_SESSION['login'] == 'guest') : ?>
+                    <?php if (!isset($_SESSION['login'])) : ?>
                         <a class="nav-link" href="<?= BASEURL; ?>/login">Login</a>
                         <a class="nav-link" href="<?= BASEURL; ?>/register">Register</a>
+                    <?php elseif (isset($_SESSION['login']) || $_SESSION['login'] == 'admin' || $_SESSION['login'] == 'user') : ?>
+                        <a class="nav-link" href="<?= BASEURL; ?>/logout">Logout</a>
                     <?php endif; ?>
                 </div>
             </div>

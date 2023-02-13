@@ -11,8 +11,11 @@
 </head>
 
 <body>
-    <section class="d-flex align-items-start bg-dark d-flex justify-content-center" style="width: 100%; height: 100vh;">
-        <div class="section-login bg-white mt-5 p-5 rounded-4" style="width: 500px;">
+    <section class="d-flex flex-column bg-dark align-items-center pt-5" style="width: 100%; height: 100vh;">
+        <div class="flasher-wrap" style="width: 500px;">
+            <?php Flasher::flash(); ?>
+        </div>
+        <div class="section-login bg-white mt-3 p-5 rounded-4" style="width: 500px;">
             <h1 class="display-4 fw-bold mb-3 text-center">Login!</h1>
             <form class="login-form" action="<?= BASEURL; ?>/login/loginAction" method="post">
                 <div class="mb-3">

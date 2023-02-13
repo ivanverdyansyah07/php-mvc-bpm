@@ -1,11 +1,14 @@
-<section class="d-flex align-items-center" style="width: 100%; height: 100vh;">
+<section class="d-flex flex-column justify-content-center" style="width: 100%; height: 100vh;">
+    <div class="flasher-wrap mb-3">
+        <?php Flasher::flash(); ?>
+    </div>
     <div class="section-group">
         <h1 class="display-4 fw-bold mb-3">Hello, Welcome Back
             <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 'admin') : ?>
                 <?= "Admin"; ?>
             <?php elseif (isset($_SESSION['login']) && $_SESSION['login'] == 'user') : ?>
                 <?= $_SESSION['userLogin']['fullname']; ?>
-            <?php elseif ($_SESSION['login'] == 'guest') : ?>
+            <?php elseif (!isset($_SESSION['login'])) : ?>
                 <?= "to BPM"; ?>
             <?php endif; ?>
             !</h1>

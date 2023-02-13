@@ -1,4 +1,5 @@
 <section style="margin-top: 100px;">
+    <?php Flasher::flash(); ?>
     <div class="section">
         <div class="section-header mb-4">
             <h2>Report Complaint</h2>

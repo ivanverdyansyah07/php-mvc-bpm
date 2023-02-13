@@ -34,8 +34,10 @@ class History extends Controller
     public function complaintEdit()
     {
         if ($this->model('Complaint_model')->editComplaint($_POST) > 0) {
+            Flasher::setFlash('success', 'Data Complaint', 'Edited Successfully!');
             header('Location: ' . BASEURL);
         } else {
+            Flasher::setFlash('danger', 'Data Complaint', 'Failed to Edit!');
             header('Location: ' . BASEURL);
         }
     }
@@ -43,8 +45,10 @@ class History extends Controller
     public function complaintDelete($id)
     {
         if ($this->model('Complaint_model')->deleteComplaint($id) > 0) {
+            Flasher::setFlash('success', 'Data Complaint', 'Successfully Deleted!');
             header('Location: ' . BASEURL);
         } else {
+            Flasher::setFlash('danger', 'Data Complaint', 'Failed to Delete!');
             header('Location: ' . BASEURL);
         }
     }
